@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row pt-4">
+    <div class="col-3">
+      <button type="button" class="btn btn-light" (click)="getScore()">
+        <i class="fas fa-sync-alt"></i> Refresh
+      </button>
+    </div>
+  </div>
+  <div class="row pt-2">
+    <div class="col table-wrapper">
+      <table class="table table-dark table-striped text-center">
+        <thead>
+          <tr>
+            <th scope="col">Total rounds played</th>
+            <th scope="col">Total wins Player 1</th>
+            <th scope="col">Total wins Player 2</th>
+            <th scope="col">Total Draws</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{score.totalRounds}}</td>
+            <td>{{score.totalWinsPlayer1}}</td>
+            <td>{{score.totalWinsPlayer2}}</td>
+            <td>{{score.totalDraws}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

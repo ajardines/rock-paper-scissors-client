@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row pt-4">
+    <div class="col-3">
+      <button type="button" class="btn btn-primary"
+        (click)="newMatch()">Play Round</button>
+    </div>
+  </div>
+  <div class="row pt-4">
+    <div class="col table-wrapper">
+      <table class="table table-dark table-striped text-center caption-top">
+        <caption>Rounds played: {{matches.length}}</caption>
+        <thead>
+          <tr>
+            <th scope="col">Player 1</th>
+            <th scope="col">Player 2</th>
+            <th scope="col">Result of the round</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let match of matches">
+            <td>{{match.player1}} <i [ngClass]="'far fa-hand-' + match.player1 | lowercase"></i></td>
+            <td>{{match.player2}} <i [ngClass]="'far fa-hand-' + match.player2 | lowercase"></i></td>
+            <td *ngIf="match.player1Wins" >Player 1 wins</td>
+            <td *ngIf="match.player2Wins">Player 2 wins</td>
+            <td *ngIf="match.draw">Draw</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row pt-1">
+    <div class="col-3">
+      <button type="button" class="btn btn-danger"
+        (click)="resetGame()">Reset Game</button>
+    </div>
+  </div>
+</div>
